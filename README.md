@@ -25,21 +25,21 @@
 
 ---
 
-## ✨ Features
+##  Features
 
 | Feature | Description |
 |---|---|
-| 🔴 **Live HTTP Probes** | Real browser-to-backend fetch calls — no simulated data |
-| 🐘 **Database Diagnostics** | PostgreSQL reachability tested via JPA query on every probe |
-| 📜 **Persisted History** | Every check is recorded in PostgreSQL and shown in the dashboard |
-| 🐳 **Docker Health Awareness** | Explains the difference between `docker ps` state and `/actuator/health` |
-| 🔬 **Failure Lab** | Four reproducible failure scenarios with step-by-step reproduction guides |
-| 🔧 **Container Diagnostics** | One-click copy for the exact Docker CLI commands needed to debug |
-| 🎨 **Glassmorphism UI** | Premium dark UI with animated shooting stars, gradient orbs, and floating code glyphs |
+|  **Live HTTP Probes** | Real browser-to-backend fetch calls — no simulated data |
+|  **Database Diagnostics** | PostgreSQL reachability tested via JPA query on every probe |
+|  **Persisted History** | Every check is recorded in PostgreSQL and shown in the dashboard |
+|  **Docker Health Awareness** | Explains the difference between `docker ps` state and `/actuator/health` |
+|  **Failure Lab** | Four reproducible failure scenarios with step-by-step reproduction guides |
+|  **Container Diagnostics** | One-click copy for the exact Docker CLI commands needed to debug |
+|  **Glassmorphism UI** | Premium dark UI with animated shooting stars, gradient orbs, and floating code glyphs |
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ### High-Level System Diagram
 
@@ -130,51 +130,51 @@ docker ps ──▶ "Up 2 minutes (healthy)"
 
 ---
 
-## 📁 File Structure
+##  File Structure
 
 ```
 Java-Health-Check/
 │
-├── 📄 compose.yaml                     # Main Docker Compose — all 3 services
-├── 📄 compose.failure.yaml             # Failure scenario override (wrong health path)
-├── 📄 .env                             # ⚠️ Local secrets (git-ignored)
-├── 📄 .env.example                     # Template for .env
-├── 📄 .gitignore
+├──  compose.yaml                     # Main Docker Compose — all 3 services
+├──  compose.failure.yaml             # Failure scenario override (wrong health path)
+├──  .env                             #  Local secrets (git-ignored)
+├──  .env.example                     # Template for .env
+├──  .gitignore
 │
-├── 🗂️ backend/                         # Spring Boot Java application
-│   ├── 📄 Dockerfile                   # Multi-stage Maven build → JRE runtime
-│   ├── 📄 pom.xml                      # Maven deps: Spring Web, JPA, Actuator, PostgreSQL
+├──  backend/                         # Spring Boot Java application
+│   ├──  Dockerfile                   # Multi-stage Maven build → JRE runtime
+│   ├──  pom.xml                      # Maven deps: Spring Web, JPA, Actuator, PostgreSQL
 │   └── src/
 │       └── main/
 │           ├── java/com/example/monitor/
-│           │   ├── 📄 HealthMonitorApplication.java    # @SpringBootApplication entry
-│           │   ├── 📄 MonitorController.java           # REST endpoints /api/*
-│           │   ├── 📄 HealthHistory.java               # @Entity — DB table schema
-│           │   └── 📄 HealthHistoryRepository.java     # JPA repository interface
+│           │   ├──  HealthMonitorApplication.java    # @SpringBootApplication entry
+│           │   ├──  MonitorController.java           # REST endpoints /api/*
+│           │   ├──  HealthHistory.java               # @Entity — DB table schema
+│           │   └──  HealthHistoryRepository.java     # JPA repository interface
 │           └── resources/
-│               └── 📄 application.properties           # Server config, datasource, actuator
+│               └──  application.properties           # Server config, datasource, actuator
 │
-├── 🗂️ frontend/                        # React + TypeScript SPA
-│   ├── 📄 Dockerfile                   # Vite build → nginx serve
-│   ├── 📄 nginx.conf                   # Reverse proxy /api/* → backend:8080
-│   ├── 📄 index.html                   # App shell
-│   ├── 📄 vite.config.ts               # Vite config with API proxy
-│   ├── 📄 tailwind.config.js           # Tailwind (base/components/utilities only)
+├──  frontend/                        # React + TypeScript SPA
+│   ├──  Dockerfile                   # Vite build → nginx serve
+│   ├──  nginx.conf                   # Reverse proxy /api/* → backend:8080
+│   ├──  index.html                   # App shell
+│   ├──  vite.config.ts               # Vite config with API proxy
+│   ├──  tailwind.config.js           # Tailwind (base/components/utilities only)
 │   └── src/
-│       ├── 📄 main.tsx                 # React DOM entry
-│       ├── 📄 App.tsx                  # All pages + components + probe logic
-│       └── 📄 styles.css              # Full design system (glassmorphism, animations)
+│       ├──  main.tsx                 # React DOM entry
+│       ├──  App.tsx                  # All pages + components + probe logic
+│       └──  styles.css              # Full design system (glassmorphism, animations)
 │
-├── 🗂️ database/
+├──  database/
 │   └── init/                           # SQL run on first postgres startup
 │
-└── 🗂️ docs/
+└──  docs/
     └── screenshots/                    # README images
 ```
 
 ---
 
-## 🔌 API Reference
+##  API Reference
 
 All endpoints are served by the Spring Boot application on port **8080** internally (proxied through nginx on port **3000** in production).
 
@@ -256,7 +256,7 @@ Returns the 20 most recent health check records from the database (descending by
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -291,7 +291,7 @@ POSTGRES_USER=healthmonitor
 POSTGRES_PASSWORD=your-secure-password
 ```
 
-> ⚠️ **Never commit `.env`** — it is already in `.gitignore`.
+>  **Never commit `.env`** — it is already in `.gitignore`.
 
 ### 3. Build and start
 
@@ -300,10 +300,10 @@ docker compose up -d --build
 ```
 
 This will:
-1. 🔨 Compile the Java app with Maven inside Docker
-2. 🐘 Start PostgreSQL and wait until `pg_isready` succeeds
-3. 🌱 Start Spring Boot and wait until `/actuator/health` returns `200`
-4. 🌐 Start nginx and serve the React SPA
+1.  Compile the Java app with Maven inside Docker
+2.  Start PostgreSQL and wait until `pg_isready` succeeds
+3.  Start Spring Boot and wait until `/actuator/health` returns `200`
+4.  Start nginx and serve the React SPA
 
 ### 4. Open the dashboard
 
@@ -330,7 +330,7 @@ java-health-monitor-postgres   Up 50 seconds (healthy)   5432/tcp
 
 ---
 
-## 🧪 Failure Scenarios
+##  Failure Scenarios
 
 Each scenario can be reproduced safely without modifying application code.
 
@@ -403,7 +403,7 @@ Wait ~40 seconds for Spring Boot to initialize, then click **Run checks** in the
 
 ---
 
-## 🐳 Docker Commands Cheat Sheet
+##  Docker Commands Cheat Sheet
 
 ```bash
 # View all container states
@@ -431,7 +431,7 @@ docker compose logs --tail=100 postgres
 
 ---
 
-## 🛠️ Development Setup (Frontend Hot Reload)
+##  Development Setup (Frontend Hot Reload)
 
 ```bash
 # Start only backend services with Docker
@@ -448,7 +448,7 @@ Vite proxies `/api/*` and `/actuator/*` to `http://localhost:8080` via `vite.con
 
 ---
 
-## 🗃️ Database Schema
+##  Database Schema
 
 ```sql
 CREATE TABLE health_history (
@@ -466,7 +466,7 @@ Managed automatically by Spring JPA (`ddl-auto=update`).
 
 ---
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 | Variable | Default | Description |
 |---|---|---|
@@ -479,7 +479,7 @@ Managed automatically by Spring JPA (`ddl-auto=update`).
 
 ---
 
-## 🎨 UI Design System
+##  UI Design System
 
 The frontend uses a custom CSS design system (no component library) built with:
 
@@ -487,17 +487,17 @@ The frontend uses a custom CSS design system (no component library) built with:
 - **Typography:** Inter (UI) + JetBrains Mono (code/monospace)
 - **Effects:** Glassmorphism panels, CSS `backdrop-filter`, neon box-shadows
 - **Animations:**
-  - 🌌 5-layer animated radial gradient orbs (slow drift)
-  - 🌠 10 CSS shooting stars (diagonal streaks with glow tails)
-  - 💻 12 floating code glyphs (`{}`, `</>`, `() =>`, etc.)
-  - 🌊 Aurora sweep background animation
-  - ✨ Card hover lift + border glow
-  - 🔵 Sonar pulse rings on the hero heartbeat icon
-  - 📑 Page enter fade+scale animation on every nav change
+  -  5-layer animated radial gradient orbs (slow drift)
+  -  10 CSS shooting stars (diagonal streaks with glow tails)
+  -  12 floating code glyphs (`{}`, `</>`, `() =>`, etc.)
+  -  Aurora sweep background animation
+  -  Card hover lift + border glow
+  -  Sonar pulse rings on the hero heartbeat icon
+  -  Page enter fade+scale animation on every nav change
 
 ---
 
-## 📋 Tech Stack
+##  Tech Stack
 
 | Layer | Technology |
 |---|---|
@@ -517,41 +517,41 @@ The frontend uses a custom CSS design system (no component library) built with:
 
 ---
 
-## 📸 Screenshots
+##  Screenshots
 
 <h1 align="center">
   <br>
   <img src="docs/screenshots/dashboard.png" alt="Java Health Monitor Banner" width="100%">
   <br>
-  ☕ Java Health Monitor
+   Java Health Monitor
   <br>
 </h1>
 
-### 🖥️ System Overview — Dashboard
+###  System Overview — Dashboard
 
 > Live probe results, service availability cards, and recent check history.
 
 ![Dashboard Overview](docs/screenshots/dashboard.png)
 
-### ⚡ Dashboard — After Running Checks
+###  Dashboard — After Running Checks
 
 > All services reporting `UP` with real HTTP response times.
 
 ![Dashboard Live](docs/screenshots/dashboard_live.png)
 
-### 💓 Health Check Center
+###  Health Check Center
 
 > Live HTTP probes to `/api/status` and `/actuator/health` with raw JSON responses.
 
 ![Health Checks](docs/screenshots/health_checks.png)
 
-### 🔍 Container Diagnostics
+###  Container Diagnostics
 
 > Copy-ready Docker CLI commands for investigating container state and networking.
 
 ![Diagnostics](docs/screenshots/diagnostics.png)
 
-### 🧪 Failure Simulation Lab
+###  Failure Simulation Lab
 
 > Reproducible failure scenarios: wrong health path, port mismatch, DB unavailable.
 
