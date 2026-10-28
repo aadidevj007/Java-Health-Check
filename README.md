@@ -39,6 +39,17 @@
 
 ---
 
+## Team Members
+
+| Serial No. | Name | Register Number | Email ID |
+|---:|---|---|---|
+| 1 | Aadidev J | 99230041022 | [99230041022@klu.ac.in](mailto:99230041022@klu.ac.in) |
+| 2 | S Ganesh Kumar | 99230041090 | [99230041090@klu.ac.in](mailto:99230041090@klu.ac.in) |
+| 3 | S Teja Dhanush | 99230041104 | [99230041104@klu.ac.in](mailto:99230041104@klu.ac.in) |
+| 4 | T Farhaan | 99230041088 | [99230041088@klu.ac.in](mailto:99230041088@klu.ac.in) |
+
+---
+
 ##  Architecture
 
 ### High-Level System Diagram
