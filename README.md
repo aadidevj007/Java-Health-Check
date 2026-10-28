@@ -15,12 +15,13 @@
 
 <p align="center">
   <a href="#-features">Features</a> •
-  <a href="#-screenshots">Screenshots</a> •
+  <a href="#-team-members">Team Members</a> •
   <a href="#-architecture">Architecture</a> •
   <a href="#-file-structure">File Structure</a> •
   <a href="#-api-reference">API Reference</a> •
   <a href="#-quick-start">Quick Start</a> •
   <a href="#-failure-scenarios">Failure Scenarios</a>
+  <a href="#-screenshots">Screenshots</a>
 </p>
 
 ---
@@ -414,7 +415,7 @@ Wait ~40 seconds for Spring Boot to initialize, then click **Run checks** in the
 
 ---
 
-##  Docker Commands Cheat Sheet
+##  Docker Commands
 
 ```bash
 # View all container states
@@ -442,7 +443,7 @@ docker compose logs --tail=100 postgres
 
 ---
 
-##  Development Setup (Frontend Hot Reload)
+##  Development Setup - Frontend
 
 ```bash
 # Start only backend services with Docker
@@ -474,37 +475,6 @@ CREATE TABLE health_history (
 ```
 
 Managed automatically by Spring JPA (`ddl-auto=update`).
-
----
-
-##  Environment Variables
-
-| Variable | Default | Description |
-|---|---|---|
-| `POSTGRES_DB` | `healthmonitor` | Database name |
-| `POSTGRES_USER` | `healthmonitor` | DB username |
-| `POSTGRES_PASSWORD` | *(required)* | DB password — set in `.env` |
-| `SPRING_DATASOURCE_URL` | auto-set by compose | JDBC connection string |
-| `SPRING_DATASOURCE_USERNAME` | auto-set by compose | Spring datasource user |
-| `SPRING_DATASOURCE_PASSWORD` | auto-set by compose | Spring datasource password |
-
----
-
-##  UI Design System
-
-The frontend uses a custom CSS design system (no component library) built with:
-
-- **Colors:** Deep navy base (`#020817`) with cyan (`#22d3ee`), violet (`#a78bfa`), teal (`#2dd4bf`) accents
-- **Typography:** Inter (UI) + JetBrains Mono (code/monospace)
-- **Effects:** Glassmorphism panels, CSS `backdrop-filter`, neon box-shadows
-- **Animations:**
-  -  5-layer animated radial gradient orbs (slow drift)
-  -  10 CSS shooting stars (diagonal streaks with glow tails)
-  -  12 floating code glyphs (`{}`, `</>`, `() =>`, etc.)
-  -  Aurora sweep background animation
-  -  Card hover lift + border glow
-  -  Sonar pulse rings on the hero heartbeat icon
-  -  Page enter fade+scale animation on every nav change
 
 ---
 
