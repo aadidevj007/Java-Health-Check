@@ -1,10 +1,4 @@
-<h1 align="center">
-  <br>
-  <img src="docs/screenshots/dashboard.png" alt="Java Health Monitor Banner" width="100%">
-  <br>
-  ☕ Java Health Monitor
-  <br>
-</h1>
+
 
 <h4 align="center">
   A full-stack observability dashboard that proves the difference between a <em>running</em> container and a <em>healthy</em> application.
@@ -45,72 +39,38 @@
 
 ---
 
-## 📸 Screenshots
-
-### 🖥️ System Overview — Dashboard
-
-> Live probe results, service availability cards, and recent check history.
-
-![Dashboard Overview](docs/screenshots/dashboard.png)
-
-### ⚡ Dashboard — After Running Checks
-
-> All services reporting `UP` with real HTTP response times.
-
-![Dashboard Live](docs/screenshots/dashboard_live.png)
-
-### 💓 Health Check Center
-
-> Live HTTP probes to `/api/status` and `/actuator/health` with raw JSON responses.
-
-![Health Checks](docs/screenshots/health_checks.png)
-
-### 🔍 Container Diagnostics
-
-> Copy-ready Docker CLI commands for investigating container state and networking.
-
-![Diagnostics](docs/screenshots/diagnostics.png)
-
-### 🧪 Failure Simulation Lab
-
-> Reproducible failure scenarios: wrong health path, port mismatch, DB unavailable.
-
-![Failure Lab](docs/screenshots/failure_lab.png)
-
----
-
 ## 🏗️ Architecture
 
 ### High-Level System Diagram
 
 ```
-┌─────────────────────────────────────────────────────────────────────┐
-│                        Docker Network: java-health-monitor           │
-│                                                                       │
-│  ┌──────────────────┐    nginx proxy     ┌─────────────────────┐    │
-│  │   Browser        │ ──────────────────▶│  Frontend (nginx)   │    │
-│  │  localhost:3000  │                    │  Port 80 (internal) │    │
-│  └──────────────────┘                    │  React + TypeScript │    │
-│           │                              └──────────┬──────────┘    │
-│           │ fetch /api/*                            │ proxy_pass     │
-│           │ fetch /actuator/*                       ▼                │
-│           │                              ┌─────────────────────┐    │
-│           └─────────────────────────────▶│  Spring Boot App    │    │
-│                                          │  Port 8080          │    │
-│                                          │  /api/status        │    │
-│                                          │  /api/health-history│    │
-│                                          │  /api/diagnostics/* │    │
-│                                          │  /actuator/health   │    │
-│                                          └──────────┬──────────┘    │
-│                                                     │ JDBC           │
-│                                                     ▼                │
-│                                          ┌─────────────────────┐    │
-│                                          │  PostgreSQL 16      │    │
-│                                          │  Port 5432          │    │
-│                                          │  health_history     │    │
-│                                          │  table              │    │
-│                                          └─────────────────────┘    │
-└─────────────────────────────────────────────────────────────────────┘
++-------------------------------------------------------------------------------+
+|                         Docker Network: java-health-monitor                   |
+|                                                                               |
+|    +----------------------+       nginx proxy       +----------------------+  |
+|    |      Browser         | ----------------------->|   Frontend (nginx)   |  |
+|    |    localhost:3000    |                         |   Port 80 (internal) |  |
+|    +----------+-----------+                         |   React + TypeScript |  |
+|               |                                     +----------+-----------+  |
+|               | fetch /api/*                                   | proxy_pass   |
+|               | fetch /actuator/*                              v              |
+|               |                                      +----------------------+ |
+|               +----------------------------------->  |   Spring Boot App    | |
+|                                                      |   Port 8080          | |
+|                                                      |   /api/status        | |
+|                                                      |   /api/health-history| |
+|                                                      |   /api/diagnostics/* | |
+|                                                      |   /actuator/health   | |
+|                                                      +----------+-----------+ |
+|                                                                 | JDBC        |
+|                                                                 v             |
+|                                                      +----------------------+ |
+|                                                      |   PostgreSQL 16      | |
+|                                                      |   Port 5432          | |
+|                                                      |   health_history     | |
+|                                                      |   table              | |
+|                                                      +----------------------+ |
++-------------------------------------------------------------------------------+
 ```
 
 ### Request Flow Diagram
@@ -557,12 +517,44 @@ The frontend uses a custom CSS design system (no component library) built with:
 
 ---
 
-## 📄 License
+## 📸 Screenshots
 
-This project is open-source and available for educational purposes.
+<h1 align="center">
+  <br>
+  <img src="docs/screenshots/dashboard.png" alt="Java Health Monitor Banner" width="100%">
+  <br>
+  ☕ Java Health Monitor
+  <br>
+</h1>
+
+### 🖥️ System Overview — Dashboard
+
+> Live probe results, service availability cards, and recent check history.
+
+![Dashboard Overview](docs/screenshots/dashboard.png)
+
+### ⚡ Dashboard — After Running Checks
+
+> All services reporting `UP` with real HTTP response times.
+
+![Dashboard Live](docs/screenshots/dashboard_live.png)
+
+### 💓 Health Check Center
+
+> Live HTTP probes to `/api/status` and `/actuator/health` with raw JSON responses.
+
+![Health Checks](docs/screenshots/health_checks.png)
+
+### 🔍 Container Diagnostics
+
+> Copy-ready Docker CLI commands for investigating container state and networking.
+
+![Diagnostics](docs/screenshots/diagnostics.png)
+
+### 🧪 Failure Simulation Lab
+
+> Reproducible failure scenarios: wrong health path, port mismatch, DB unavailable.
+
+![Failure Lab](docs/screenshots/failure_lab.png)
 
 ---
-
-<p align="center">
-  Made with ☕ and 🐳 — <strong>Java Health Monitor</strong>
-</p>
