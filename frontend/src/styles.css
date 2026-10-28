@@ -107,41 +107,6 @@ h1, h2, h3, h4, p { margin: 0; }
   100% { opacity: 1.0; transform: skewY( 1deg) translateY( 10px); }
 }
 
-/* ===================== SHOOTING STARS ===================== */
-.bg-stars {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-.star {
-  position: absolute;
-  top: 0;
-  height: 2px;
-  border-radius: 9999px;
-  background: linear-gradient(90deg, rgba(255,255,255,0), #fff, rgba(34,211,238,0.8));
-  opacity: 0;
-  animation: shoot linear infinite;
-}
-/* Individual star sizes & positions */
-.star:nth-child(1)  { width:220px; left:10%;  animation-duration:3.2s; animation-delay:0.3s;  transform:rotate(25deg); }
-.star:nth-child(2)  { width:160px; left:28%;  animation-duration:2.4s; animation-delay:1.8s;  transform:rotate(20deg); }
-.star:nth-child(3)  { width:280px; left:55%;  animation-duration:4.0s; animation-delay:0.7s;  transform:rotate(30deg); }
-.star:nth-child(4)  { width:140px; left:72%;  animation-duration:2.8s; animation-delay:3.1s;  transform:rotate(22deg); }
-.star:nth-child(5)  { width:200px; left:85%;  animation-duration:3.6s; animation-delay:0.0s;  transform:rotate(18deg); }
-.star:nth-child(6)  { width:180px; left:40%;  animation-duration:2.9s; animation-delay:2.2s;  transform:rotate(28deg); }
-.star:nth-child(7)  { width:120px; left:63%;  animation-duration:3.4s; animation-delay:4.5s;  transform:rotate(15deg); }
-.star:nth-child(8)  { width:250px; left:3%;   animation-duration:3.8s; animation-delay:1.2s;  transform:rotate(32deg); }
-.star:nth-child(9)  { width:170px; left:90%;  animation-duration:2.6s; animation-delay:5.0s;  transform:rotate(24deg); }
-.star:nth-child(10) { width:190px; left:47%;  animation-duration:3.1s; animation-delay:3.8s;  transform:rotate(19deg); }
-@keyframes shoot {
-  0%   { opacity: 0;   transform: translateX(-80px) translateY(-80px) rotate(var(--r, 25deg)); }
-  5%   { opacity: 1; }
-  80%  { opacity: 1; }
-  100% { opacity: 0;   transform: translateX(120vw) translateY(120vh)  rotate(var(--r, 25deg)); }
-}
-
 /* ===================== FLOATING CODE GLYPHS ===================== */
 .bg-code {
   position: fixed;
