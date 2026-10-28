@@ -20,7 +20,7 @@
   <a href="#-file-structure">File Structure</a> •
   <a href="#-api-reference">API Reference</a> •
   <a href="#-quick-start">Quick Start</a> •
-  <a href="#-failure-scenarios">Failure Scenarios</a>
+  <a href="#-failure-scenarios">Failure Scenarios</a> •
   <a href="#-screenshots">Screenshots</a>
 </p>
 
