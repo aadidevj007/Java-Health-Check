@@ -14,14 +14,12 @@
 </p>
 
 <p align="center">
-  <a href="#features">Features</a> •
-  <a href="#team-members">Team Members</a> •
-  <a href="#architecture">Architecture</a> •
-  <a href="#file-structure">File Structure</a> •
-  <a href="#api-reference">API Reference</a> •
-  <a href="#quick-start">Quick Start</a> •
-  <a href="#failure-scenarios">Failure Scenarios</a> •
-  <a href="#screenshots">Screenshots</a>
+  <img src="https://img.shields.io/badge/Java-17-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Spring%20Boot-3.x-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"/>
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-16-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Docker-Compose-2496ED?style=for-the-badge&logo=docker&logoColor=white"/>
+  <img src="https://img.shields.io/badge/TypeScript-5.x-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
 </p>
 
 ---
@@ -550,14 +548,14 @@ Managed automatically by Spring JPA (`ddl-auto=update`).
 </p>
 
 <p align="center">
-  <a href="#-features">Features</a> •
-  <a href="#-team-members">Team Members</a> •
-  <a href="#-architecture">Architecture</a> •
-  <a href="#-file-structure">File Structure</a> •
-  <a href="#-api-reference">API Reference</a> •
-  <a href="#-quick-start">Quick Start</a> •
-  <a href="#-failure-scenarios">Failure Scenarios</a> •
-  <a href="#-screenshots">Screenshots</a>
+  <a href="#features">Features</a> •
+  <a href="#team-members">Team Members</a> •
+  <a href="#architecture">Architecture</a> •
+  <a href="#file-structure">File Structure</a> •
+  <a href="#api-reference">API Reference</a> •
+  <a href="#quick-start">Quick Start</a> •
+  <a href="#failure-scenarios">Failure Scenarios</a> •
+  <a href="#screenshots">Screenshots</a>
 </p>
 
 ---
