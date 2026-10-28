@@ -488,6 +488,7 @@ The frontend uses a custom CSS design system (no component library) built with:
 - **Effects:** Glassmorphism panels, CSS `backdrop-filter`, neon box-shadows
 - **Animations:**
   - 🌌 5-layer animated radial gradient orbs (slow drift)
+  - 🌠 10 CSS shooting stars (diagonal streaks with glow tails)
   - 💻 12 floating code glyphs (`{}`, `</>`, `() =>`, etc.)
   - 🌊 Aurora sweep background animation
   - ✨ Card hover lift + border glow

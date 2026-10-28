@@ -72,6 +72,13 @@ const CODE_GLYPHS = [
 function BackgroundEffects() {
   return (
     <>
+      {/* Shooting stars */}
+      <div className="bg-stars" aria-hidden="true">
+        {Array.from({ length: 10 }).map((_, i) => (
+          <span key={i} className="star" />
+        ))}
+      </div>
+
       {/* Floating code glyphs */}
       <div className="bg-code" aria-hidden="true">
         {CODE_GLYPHS.map((g, i) => (
@@ -89,13 +96,18 @@ async function probe(url: string): Promise<Probe> {
     const response = await fetch(url, { signal: AbortSignal.timeout(5000) });
     const bodyText = await response.text();
     let body: unknown;
+    let responseIsJson = true;
     try {
-      body = JSON.parse(bodyText);
+      body = bodyText ? JSON.parse(bodyText) : {};
     } catch {
-      body = { error: bodyText.slice(0, 160) || "The endpoint returned an invalid response." };
+      responseIsJson = false;
+      body = {
+        error: `Endpoint returned non-JSON content (${response.headers.get("content-type") ?? "unknown content type"})`,
+        preview: bodyText.slice(0, 160)
+      };
     }
     return {
-      status: response.ok ? "UP" : "DOWN",
+      status: response.ok && responseIsJson ? "UP" : "DOWN",
       httpStatus: response.status,
       responseTimeMs: Math.round(performance.now() - started),
       body,
